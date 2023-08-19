@@ -23,7 +23,7 @@
 
         <!-- Styles -->
         {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
-        <link rel="stylesheet" href="https://contracts.test/build/assets/app-a8c890c9.css">
+        <link rel="stylesheet" href="https://store.test/build/assets/app-2a49e32b.css">
         {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@latest/dist/css/tabler.min.css"> --}}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
 
