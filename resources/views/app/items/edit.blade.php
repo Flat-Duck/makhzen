@@ -13,12 +13,13 @@
             <div class="col-12">
                 <form
                     role="form"
-                    method="PUT"
+                    method="POST"
                     action="{{ route('items.update', $item) }}"
                     enctype="multipart/form-data"
                     class="card"
                 >
                     @csrf
+                    @method('PUT')
                     <div class="card-header">
                         <h4 class="card-title">
                             @lang('crud.items.edit_title')
