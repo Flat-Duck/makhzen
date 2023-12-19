@@ -16,7 +16,7 @@
         name="phone"
         label="{{trans('crud.offices.inputs.phone')}}"
         :value="old('phone', ($editing ? $office->phone : ''))"
-        maxlength="255"
+        maxlength="10"
         placeholder="{{trans('crud.offices.inputs.phone')}}"
         required
     ></x-inputs.text>

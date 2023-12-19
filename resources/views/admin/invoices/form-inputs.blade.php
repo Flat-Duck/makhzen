@@ -14,8 +14,8 @@
 <x-inputs.group class="col-sm-12">
     <x-inputs.select name="type" label="{{trans('crud.invoices.inputs.type')}}">
         @php $selected = old('type', ($editing ? $invoice->type : '')) @endphp
-        <option value="صادر" {{ $selected == 'صادر' ? 'selected' : '' }} ></option>
-        <option value="وارد" {{ $selected == 'وارد' ? 'selected' : '' }} ></option>
-        <option value="تالف" {{ $selected == 'تالف' ? 'selected' : '' }} ></option>
+        <option value="صادر" {{ $selected == 'صادر' ? 'selected' : '' }} >صادر</option>
+        <option value="وارد" {{ $selected == 'وارد' ? 'selected' : '' }} >وارد</option>
+        <option value="تالف" {{ $selected == 'تالف' ? 'selected' : '' }} >تالف</option>
     </x-inputs.select>
 </x-inputs.group>
