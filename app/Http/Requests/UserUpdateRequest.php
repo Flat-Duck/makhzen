@@ -27,6 +27,7 @@ class UserUpdateRequest extends FormRequest
                 Rule::unique('users', 'email')->ignore($this->user),
                 'email',
             ],
+            'phone' => ['numeric','starts_with:09'],
             'password' => ['nullable'],
             'roles' => 'array',
         ];

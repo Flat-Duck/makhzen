@@ -34,8 +34,8 @@
 <x-inputs.group class="col-sm-12">
     <x-inputs.select name="gender" label="{{trans('crud.users.inputs.gender')}}">
         @php $selected = old('gender', ($editing ? $user->gender : '')) @endphp
-        <option value="ذكر" {{ $selected == 'ذكر' ? 'selected' : '' }} ></option>
-        <option value="أنثى" {{ $selected == 'أنثى' ? 'selected' : '' }} ></option>
+        <option value="ذكر" {{ $selected == 'ذكر' ? 'selected' : '' }} >ذكر</option>
+        <option value="أنثى" {{ $selected == 'أنثى' ? 'selected' : '' }} >أنثى</option>
     </x-inputs.select>
 </x-inputs.group>
 
