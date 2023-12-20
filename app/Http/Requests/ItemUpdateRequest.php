@@ -25,7 +25,7 @@ class ItemUpdateRequest extends FormRequest
             'color' => ['required'],
             'quantity' => ['required', 'numeric'],
             'description' => ['required', 'max:255', 'string'],
-            'ex_date' => ['required', 'date'],
+            'ex_date' => ['required', 'date','after:today'],
         ];
     }
 }
