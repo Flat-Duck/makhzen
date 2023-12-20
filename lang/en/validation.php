@@ -173,7 +173,9 @@ return [
 
     'attributes' => [
         'name'                  => 'الاسم',
-        'username'              => 'اسم المُستخدم',
+        'today'                 => 'اليوم',
+        'ex_date'               => 'تاريخ الصلاحية',
+        'username'              => 'اسم ',
         'email'                 => 'البريد الالكتروني',
         'first_name'            => 'الاسم',
         'last_name'             => 'اسم العائلة',
