@@ -20,8 +20,8 @@ class OfficeStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'max:255', 'string'],
-            'phone' => ['required', 'max:255', 'string'],
+            'name' => ['required', 'max:255', 'alpha'],
+            'phone' => ['numeric','starts_with:09'],
             'location' => ['required', 'max:255', 'string'],
         ];
     }
