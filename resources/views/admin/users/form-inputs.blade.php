@@ -51,14 +51,14 @@
 </x-inputs.group>
 
 <x-inputs.group class="col-sm-12">
-    <x-inputs.text
+    <x-inputs.number
         name="phone"
         label="{{trans('crud.users.inputs.phone')}}"
         :value="old('phone', ($editing ? $user->phone : ''))"
-        maxlength="255"
+        maxlength="10"
         placeholder="{{trans('crud.users.inputs.phone')}}"
         required
-    ></x-inputs.text>
+    ></x-inputs.number>
 </x-inputs.group>
 
 <div class="form-group col-sm-12 mt-4">
