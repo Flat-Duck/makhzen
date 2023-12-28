@@ -12,14 +12,14 @@
 </x-inputs.group>
 
 <x-inputs.group class="col-sm-12">
-    <x-inputs.text
+    <x-inputs.number
         name="phone"
         label="{{trans('crud.offices.inputs.phone')}}"
         :value="old('phone', ($editing ? $office->phone : ''))"
         maxlength="10"
         placeholder="{{trans('crud.offices.inputs.phone')}}"
         required
-    ></x-inputs.text>
+    ></x-inputs.number>
 </x-inputs.group>
 
 <x-inputs.group class="col-sm-12">
