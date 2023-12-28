@@ -86,7 +86,7 @@
                             <th>#</th>
                             <th>@lang('crud.orders.inputs.number')</th>
                             <th>@lang('crud.orders.inputs.office_id')</th>
-                            <th>@lang('crud.orders.inputs.user_id')</th>
+                            {{-- <th>@lang('crud.orders.inputs.user_id')</th> --}}
                             <th>@lang('crud.common.actions')</th>
                         </tr>
                     </thead>
@@ -96,9 +96,9 @@
                             <td>{{ $k+1 }}</td>
                             <td>{{ $order->number ?? '-' }}</td>
                             <td>{{ optional($order->office)->name ?? '-' }}</td>
-                            <td>
-                                {{ optional($order->created_by)->name ?? '-' }}
-                            </td>
+                            {{-- <td>
+                                 {{ optional($order->created_by)->name ?? '-' }} 
+                            </td> --}}
                             <td>
                                 <div
                                     role="group"
