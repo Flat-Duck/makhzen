@@ -62,7 +62,7 @@
 </x-inputs.group>
 
 <div class="form-group col-sm-12 mt-4">
-    <h4>تعيين @lang('crud.roles.name')</h4>
+    <h4>تعيين الصلاحيات</h4>
 
     @foreach ($roles as $role)
     <div>

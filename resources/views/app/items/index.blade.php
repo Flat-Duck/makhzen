@@ -84,6 +84,7 @@
                     <thead>
                         <tr>
                             <th>#</th>
+                            <th>@lang('crud.items.inputs.name')</th>
                             <th>@lang('crud.items.inputs.code')</th>
                             <th>@lang('crud.items.inputs.type')</th>
                             <th>@lang('crud.items.inputs.color')</th>
@@ -97,6 +98,7 @@
                         @forelse($items as $k=> $item)
                         <tr>
                             <td>{{ $k+1 }}</td>
+                            <td>{{ $item->name ?? '-' }}</td>
                             <td>{{ $item->code ?? '-' }}</td>
                             <td>{{ $item->type ?? '-' }}</td>
                             <td>{{ $item->color ?? '-' }}</td>

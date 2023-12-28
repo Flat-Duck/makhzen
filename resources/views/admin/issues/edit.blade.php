@@ -43,12 +43,12 @@
                         >
                             @lang('crud.common.back')
                         </a>
-                        <a
+                        {{-- <a
                             href="{{ route('issues.create') }}"
                             class="btn btn-default"
                         >
                             @lang('crud.common.create')
-                        </a>
+                        </a> --}}
                     </div>
                 </form>
             </div>
