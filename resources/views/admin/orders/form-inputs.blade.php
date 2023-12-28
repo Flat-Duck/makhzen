@@ -21,7 +21,7 @@
     </x-inputs.select>
 </x-inputs.group>
 
-<x-inputs.group class="col-sm-12">
+{{-- <x-inputs.group class="col-sm-12">
     <x-inputs.select name="user_id" label="{{trans('crud.orders.inputs.user_id')}}" required>
         @php $selected = old('user_id', ($editing ? $order->user_id : '')) @endphp
         <option disabled {{ empty($selected) ? 'selected' : '' }}>  الرجاء اختيار المستخدم</option>
@@ -29,4 +29,4 @@
         <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }} >{{ $label }}</option>
         @endforeach
     </x-inputs.select>
-</x-inputs.group>
+</x-inputs.group> --}}

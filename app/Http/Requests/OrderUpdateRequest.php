@@ -22,7 +22,7 @@ class OrderUpdateRequest extends FormRequest
         return [
             'number' => ['required', 'numeric'],
             'office_id' => ['required', 'exists:offices,id'],
-            'user_id' => ['required', 'exists:users,id'],
+          //  'user_id' => ['nullable', 'exists:users,id'],
         ];
     }
 }

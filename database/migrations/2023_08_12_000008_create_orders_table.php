@@ -14,7 +14,7 @@ return new class extends Migration {
             $table->bigIncrements('id');
             $table->integer('number');
             $table->unsignedBigInteger('office_id');
-            $table->unsignedBigInteger('user_id');
+         //   $table->unsignedBigInteger('user_id');
 
             $table->timestamps();
         });

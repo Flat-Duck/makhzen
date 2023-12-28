@@ -20,6 +20,7 @@ class ItemUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'name' => ['required', 'max:255', 'string'],
             'code' => ['required', 'max:255', 'string'],
             'type' => ['required', 'max:255', 'string'],
             'color' => ['required'],
