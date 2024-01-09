@@ -21,7 +21,7 @@ class ItemStoreRequest extends FormRequest
     {
         return [
             'name' => ['required', 'max:255', 'string'],
-            'code' => ['required', 'max:255', 'string'],
+            'code' => ['required', 'max:255', 'string', 'unique:items,code'],
             'type' => ['required', 'max:255', 'string'],
             'color' => ['required'],
             'quantity' => ['required', 'numeric'],

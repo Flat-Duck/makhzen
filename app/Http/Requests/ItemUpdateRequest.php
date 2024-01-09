@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class ItemUpdateRequest extends FormRequest
 {
@@ -21,7 +22,8 @@ class ItemUpdateRequest extends FormRequest
     {
         return [
             'name' => ['required', 'max:255', 'string'],
-            'code' => ['required', 'max:255', 'string'],
+            'code' => ['required', 'max:255', 'string',
+            Rule::unique('items', 'code')->ignore($this->item),],
             'type' => ['required', 'max:255', 'string'],
             'color' => ['required'],
             'quantity' => ['required', 'numeric'],

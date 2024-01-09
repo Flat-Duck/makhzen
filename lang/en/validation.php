@@ -173,6 +173,7 @@ return [
 
     'attributes' => [
         'name'                  => 'الاسم',
+        'code'                  => 'الرمز',
         'today'                 => 'اليوم',
         'ex_date'               => 'تاريخ الصلاحية',
         'username'              => 'اسم ',

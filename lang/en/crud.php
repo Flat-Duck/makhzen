@@ -116,7 +116,9 @@ return [
         'edit_title' => 'تعديل طلب',
         'show_title' => 'عرض طلب',
         'inputs' => [
-            'number' => 'الرقم',
+            'number' => 'الرقم الاشاري',        
+            'status' => 'حالة الطلب',        
+            'created_at' => 'التاريخ',
             'office_id' => 'المكنب',
             'user_id' => 'صدر عن',
         ],

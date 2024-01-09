@@ -33,7 +33,7 @@
                         >
                             <option value="null" disabled>Please select the Item</option>
                             @foreach($itemsForSelect as $value => $label)
-                            <option value="{{ $value }}"  >{{ $label }}</option>
+                            <option value="{{ $value }}">{{ $label }}</option>
                             @endforeach
                         </x-inputs.select>
                     </x-inputs.group>

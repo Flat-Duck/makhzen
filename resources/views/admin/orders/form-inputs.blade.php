@@ -10,6 +10,17 @@
         required
     ></x-inputs.text>
 </x-inputs.group>
+<x-inputs.group class="col-sm-12">
+    <x-inputs.text
+        readonly
+        name="created_at"
+        label="{{trans('crud.orders.inputs.created_at')}}"
+        :value="old('created_at', ($editing ? $order->created_at : now()->format('Y-m-d')))"
+        max="255"
+        placeholder="{{trans('crud.orders.inputs.created_at')}}"
+        required
+    ></x-inputs.text>
+</x-inputs.group>
 
 <x-inputs.group class="col-sm-12">
     <x-inputs.select name="office_id" label="{{trans('crud.orders.inputs.office_id')}}" required>
