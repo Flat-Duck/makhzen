@@ -12,6 +12,7 @@ class Item extends Model
     use Searchable;
 
     protected $fillable = [
+        'name',
         'code',
         'type',
         'color',
