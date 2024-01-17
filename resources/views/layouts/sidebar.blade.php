@@ -63,8 +63,10 @@
                                 </li>
                             @endcan
                             @can('view-any', App\Models\Invoice::class)
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="{{ route('invoices.index') }}">
+                                <li class="nav-item dropdown">
+                                    
+                                    <a class="nav-link dropdown-toggle " href="#navbar-help" data-bs-toggle="dropdown" data-bs-auto-close="outside" role="button" aria-expanded="true">
+                                         
                                         <span class="nav-link-icon d-md-none d-lg-inline-block">
                                             <i class="ti ti-users" ></i>
                                         </span>
@@ -72,6 +74,18 @@
                                             الفواتير
                                         </span>
                                     </a>
+                                    <div class="dropdown-menu" data-bs-popper="static">
+                                        <a class="dropdown-item" href="{{ route('invoices.index',['search'=>'صادر']) }}" target="_blank" rel="noopener">
+                                          صادر
+                                        </a>
+                                        <a class="dropdown-item" href="{{ route('invoices.index',['search'=>'وارد']) }}" target="_blank" rel="noopener">
+                                          وارد
+                                        </a>
+                                        <a class="dropdown-item" href="{{ route('invoices.index',['search'=>'تالف']) }}" target="_blank" rel="noopener">
+                                          تالف
+                                        </a>
+                                      </div>
+  
                                 </li>
                             @endcan
                             @can('view-any', App\Models\Order::class)
