@@ -16,6 +16,7 @@ class InvoiceItemsDetail extends Component
     public Item $item;
     public $itemsForSelect = [];
     public $item_id = null;
+    public $item_code = null;
     public $quantity;
 
     public $showingModal = false;
@@ -29,7 +30,7 @@ class InvoiceItemsDetail extends Component
     public function mount(Invoice $invoice): void
     {
         $this->invoice = $invoice;
-        $this->itemsForSelect = Item::pluck('code', 'id');
+        $this->itemsForSelect = Item::pluck('name', 'id');
         $this->resetItemData();
     }
 
@@ -41,6 +42,16 @@ class InvoiceItemsDetail extends Component
         $this->quantity = null;
 
         $this->dispatchBrowserEvent('refresh');
+    }
+
+    public function id_change()
+    {
+        $this->item_code = Item::find($this->item_id)->code;
+    }
+    
+    public function code_change()
+    {
+        $this->item_id = Item::where('code', $this->item_code)->first()->id;
     }
 
     public function newItem(): void
@@ -71,6 +82,13 @@ class InvoiceItemsDetail extends Component
         $this->invoice->items()->attach($this->item_id, [
             'quantity' => $this->quantity,
         ]);
+
+        $item = Item::find($this->item_id);
+        if ($this->invoice->type == "تالف") {
+            $item->decrement('quantity', $this->quantity);
+        } else if ($this->invoice->type == "وارد") {
+            $item->increment('quantity', $this->quantity);
+        }
 
         $this->hideModal();
     }

@@ -25,7 +25,7 @@ class OrderFactory extends Factory
         return [
             'number' => $this->faker->randomNumber(),
             'office_id' => \App\Models\Office::factory(),
-            'user_id' => \App\Models\User::factory(),
+            // 'user_id' => \App\Models\User::factory(),
         ];
     }
 }

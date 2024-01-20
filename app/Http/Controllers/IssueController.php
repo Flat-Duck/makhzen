@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\IssueStoreRequest;
 use App\Http\Requests\IssueUpdateRequest;
+use App\Models\Item;
+use App\Models\Order;
 
 class IssueController extends Controller
 {
@@ -35,7 +37,8 @@ class IssueController extends Controller
     {
         $this->authorize('create', Issue::class);
 
-        return view('admin.issues.create');
+        $orders = Order::whereNot('status', 'مصروفة')->get();
+        return view('admin.issues.create', compact('orders'));
     }
 
     /**
@@ -71,7 +74,9 @@ class IssueController extends Controller
     {
         $this->authorize('update', $issue);
 
-        return view('admin.issues.edit', compact('issue'));
+        $order = $issue->order;
+        $items = $order->items;
+        return view('admin.issues.edit', compact('issue', 'items'));
     }
 
     /**
@@ -89,6 +94,29 @@ class IssueController extends Controller
 
         return redirect()
             ->route('issues.edit', $issue)
+            ->withSuccess(__('crud.common.saved'));
+    }
+    
+    public function issue_items(Request $request)
+    {
+        $order = Order::find($request->order_id);
+        $item = Item::find($request->item_id);
+        if ($item->quantity < $request->issued_quantity) {
+            return redirect()->back()->withsErrors(__('الكمية الموجودة في المخزن غير كافية'));    
+        }
+        $order->items()->updateExistingPivot($request->item_id, ['issued_quantity' => $request->issued_quantity]);
+        $item->decrement('quantity', $request->issued_quantity);
+
+        $req = $order->items()->sum('item_order.quantity');
+        $iss = $order->items()->sum('item_order.issued_quantity');
+        if ($iss > 0 && $iss < $req) {
+            $order->update(['status' => 'مصروفة جزئيا']);
+        } else if ($iss > 0 && $iss == $req) {
+            $order->update(['status' => 'مصروفة']);
+        }
+
+        return redirect()
+            ->back()
             ->withSuccess(__('crud.common.saved'));
     }
 

@@ -25,12 +25,13 @@
 
             <div class="modal-body">
                 <div>
-                    <x-inputs.group class="col-sm-12">
+                <div class="row">
+                    <x-inputs.group class="col-sm-6">
                         <x-inputs.select
                             name="item_id"
-                            label="{{trans('crud.items.create_title')}}"
+                            label="{{trans('crud.items.inputs.name')}}"
                             wire:model="item_id"
-                        >
+                            wire:change="id_change">
                             <option value="null" disabled>Please select the Item</option>
                             @foreach($itemsForSelect as $value => $label)
                             <option value="{{ $value }}"  >{{ $label }}</option>
@@ -38,6 +39,16 @@
                         </x-inputs.select>
                     </x-inputs.group>
 
+                    <x-inputs.group class="col-sm-6">
+                        <x-inputs.number
+                            name="item_code"
+                            label="{{trans('crud.items.inputs.code')}}"
+                            wire:model="item_code"
+                            wire:change="code_change"
+                            placeholder="{{trans('crud.items.inputs.code')}}"
+                        ></x-inputs.number>
+                    </x-inputs.group>
+                </div>
                     <x-inputs.group class="col-sm-12">
                         <x-inputs.number
                             name="quantity"
@@ -110,4 +121,14 @@
     @if( $invoiceItems->hasPages() )
     <div class="card-footer pb-0">{{ $invoiceItems->links() }}</div>
     @endif
+    <script>
+        // document.addEventListener('livewire:load', function () {
+        //     // $(document).ready(function() {
+        //         $('#item_id').select2({
+        //             dropdownParent: $("#invoice-items-modal")
+        //         });
+        //     // });
+        
+        // })
+    </script>
 </div>

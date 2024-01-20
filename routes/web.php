@@ -37,6 +37,7 @@ Route::prefix('/')
         Route::resource('permissions', PermissionController::class);
 
         Route::resource('issues', IssueController::class);
+        Route::post('issues/items', [IssueController::class,'issue_items'])->name('issues.items');
         Route::resource('items', ItemController::class);
         Route::resource('offices', OfficeController::class);
         Route::resource('users', UserController::class);

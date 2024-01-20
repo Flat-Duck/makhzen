@@ -11,7 +11,7 @@ class Order extends Model
     use HasFactory;
     use Searchable;
 
-    protected $fillable = ['number', 'office_id', 'user_id'];
+    protected $fillable = ['number', 'office_id', 'user_id','status'];
 
     protected $searchableFields = ['*'];
 
@@ -27,6 +27,6 @@ class Order extends Model
 
     public function items()
     {
-        return $this->belongsToMany(Item::class);
+        return $this->belongsToMany(Item::class)->withPivot(['quantity','issued_quantity'])->as('required');
     }
 }

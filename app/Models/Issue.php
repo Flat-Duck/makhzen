@@ -11,11 +11,16 @@ class Issue extends Model
     use HasFactory;
     use Searchable;
 
-    protected $fillable = ['date'];
+    protected $fillable = ['date', 'number', 'order_id'];
 
     protected $searchableFields = ['*'];
 
     protected $casts = [
         'date' => 'date',
     ];
+
+    public function order() 
+    {
+        return $this->belongsTo(Order::class);
+    }
 }

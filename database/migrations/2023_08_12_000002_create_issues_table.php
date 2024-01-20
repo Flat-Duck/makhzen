@@ -12,8 +12,9 @@ return new class extends Migration {
     {
         Schema::create('issues', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->date('date');
-
+            $table->date('date')->nullable();
+            $table->integer('number')->nullable();
+            $table->unsignedBigInteger('order_id')->nullable();
             $table->timestamps();
         });
     }

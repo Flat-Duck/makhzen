@@ -8,13 +8,11 @@
     @include('components.inputs.partials.label')
 @endif
 
- 
 <select
-    type="text"
     id="{{ $name }}"
     name="{{ $name }}"
     {{ ($required ?? false) ? 'required' : '' }}
-    {{ $attributes->merge(['class' => 'form-control form-select']) }}
+    {{ $attributes->merge(['class' => 'form-control']) }}
     autocomplete="off"
 >{{ $slot }}</select>
 

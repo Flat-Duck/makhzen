@@ -21,6 +21,8 @@ class IssueStoreRequest extends FormRequest
     {
         return [
             'date' => ['required', 'date'],
+            'number' => ['required', 'numeric'],
+            'order_id' => ['required', 'numeric'],
         ];
     }
 }

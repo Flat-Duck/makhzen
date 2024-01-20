@@ -23,14 +23,16 @@ return [
     ],
 
     'issues' => [
-        'name' => 'Issues',
-        'index_title' => 'Issues قائمة',
-        'new_title' => 'جديد Issue',
-        'create_title' => 'انشاء Issue',
-        'edit_title' => 'تعديل Issue',
-        'show_title' => 'عرض Issue',
+        'name' => 'أذونات صرف',
+        'index_title' => 'قائمة أذونات الصرف',
+        'new_title' => 'إذن صرف جديد',
+        'create_title' => 'انشاء إذن صرف',
+        'edit_title' => 'تعديل إذن صرف',
+        'show_title' => 'عرض إذن صرف',
         'inputs' => [
-            'date' => 'Date',
+            'date' => 'التاريخ',
+            'number' => 'الرقم الاشاري',
+            'order_id' => 'طلبات الاقسام',
         ],
     ],
 
@@ -47,6 +49,9 @@ return [
             'type' => 'النوع',
             'color' => 'اللون',
             'quantity' => 'الكمية',
+            'required_quantity' => 'الكمية المطلوبة',
+            'existing_quantity' => 'الكمية الموجودة',
+            'issued_quantity' => 'الكميةالمصروفة',
             'description' => 'الوصف',
             'ex_date' => 'تارخ انتهاء الصلاحية',
         ],
@@ -116,7 +121,7 @@ return [
         'edit_title' => 'تعديل طلب',
         'show_title' => 'عرض طلب',
         'inputs' => [
-            'number' => 'الرقم الاشاري',        
+            'number' => 'الرقم الاشاري',
             'status' => 'حالة الطلب',        
             'created_at' => 'التاريخ',
             'office_id' => 'المكنب',
