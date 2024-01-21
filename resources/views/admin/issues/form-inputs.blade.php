@@ -1,5 +1,6 @@
 @php $editing = isset($issue) @endphp
 
+@if ($editing)
 <x-inputs.group class="col-sm-4">
     <x-inputs.date
         name="odate"
@@ -20,7 +21,28 @@
     onchange="updateHiddenInput()"
     ></x-inputs.number>
 </x-inputs.group>
-
+@else
+<x-inputs.group class="col-sm-4">
+    <x-inputs.date
+        name="date"
+        label="{{trans('crud.issues.inputs.date')}}"
+        value="{{ old('date', ($editing ? optional($issue->date)->format('Y-m-d') : '')) }}"
+        max="255"
+        onchange="updateHiddenInput()"
+        required
+    ></x-inputs.date>
+</x-inputs.group>
+<x-inputs.group class="col-sm-4">
+    <x-inputs.number    
+    name="number"
+    label="{{trans('crud.issues.inputs.number')}}"
+    :value="old('number', ($editing ? $issue->number : ''))"
+    placeholder="{{trans('crud.issues.inputs.number')}}"
+    required
+    onchange="updateHiddenInput()"
+    ></x-inputs.number>
+</x-inputs.group>
+@endif
 @if ($editing)
     <x-inputs.group class="col-sm-4">
         <x-inputs.text

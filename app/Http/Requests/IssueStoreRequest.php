@@ -20,7 +20,7 @@ class IssueStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'date' => ['required', 'date'],
+            'date' => ['required', 'string'],
             'number' => ['required', 'numeric'],
             'order_id' => ['required', 'numeric'],
         ];
