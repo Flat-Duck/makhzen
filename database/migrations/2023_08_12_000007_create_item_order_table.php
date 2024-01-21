@@ -14,7 +14,7 @@ return new class extends Migration {
             $table->unsignedBigInteger('item_id');
             $table->unsignedBigInteger('order_id');
             $table->integer('quantity');
-            $table->integer('issued_quantity');
+            $table->integer('issued_quantity')->default(0);
 
         });
     }

@@ -99,7 +99,7 @@
                                 <input type="hidden" value="{{$item->id}}" name="item_id">
                                 <input type="hidden" value="{{$item->required->order_id}}" name="order_id">
                                 <div class="input-group mb-2">
-                                    <input type="text" class="form-control" name="issued_quantity" placeholder="الكمية المراد صرفها"
+                                    <input type="number" class="form-control" name="issued_quantity" placeholder="الكمية المراد صرفها"
                                     value="{{ $item->required->issued_quantity ?? '0' }}"/>
                                     <button type="submit"
                                     data-bs-original-title="صرف الكمية "
