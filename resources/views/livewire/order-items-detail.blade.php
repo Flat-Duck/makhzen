@@ -83,7 +83,7 @@
                 <tr>
                     <td>{{ $k+1 }}</td>
                     <td>{{ $item->name ?? '-' }}</td>
-                    <td>{{ $item->pivot->quantity ?? '-' }}</td>
+                    <td>{{ $item->required->quantity ?? '-' }}</td>
                     <td>
                         <div
                             role="group"
