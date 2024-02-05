@@ -104,7 +104,19 @@ class IssueController extends Controller
         if ($item->quantity < $request->issued_quantity) {
             return redirect()->back()->withsErrors(__('الكمية الموجودة في المخزن غير كافية'));    
         }
-        $order->items()->updateExistingPivot($request->item_id, ['issued_quantity' => $request->issued_quantity]);
+
+        $required_item = $order->items()->where('id', $item->id)->first()->required;
+
+        if (($required_item->issued_quantity + $request->issued_quantity) > $required_item->quantity) {
+            //dd($required_item,$re);
+            return redirect()->back()->withSuccess(__('لايمكن صرف كمية اكبر من الكمية المطلوبة'));    
+        }
+
+
+        \DB::table('item_order')->where(['order_id'=>$order->id, 'item_id'=> $request->item_id])
+            ->increment('issued_quantity', $request->issued_quantity);
+
+        //$order->items()->updateExistingPivot($request->item_id, ['issued_quantity' => $request->issued_quantity]);
         $item->decrement('quantity', $request->issued_quantity);
 
         $req = $order->items()->sum('item_order.quantity');

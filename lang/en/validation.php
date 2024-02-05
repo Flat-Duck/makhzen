@@ -12,7 +12,8 @@ return [
     | as the size rules. Feel free to tweak each of these messages here.
     |
     */
-
+    // Custom Validation message.
+    'alpha_spaces' => 'يجب أن لا يحتوي حقل :attribute سوى على حروف',
     'accepted' => 'يجب قبول الحقل :attribute',
     'accepted_if' => 'الحقل :attribute مقبول في حال ما إذا كان :other يساوي :value.',
     'active_url' => 'الحقل :attribute لا يُمثّل رابطًا صحيحًا',

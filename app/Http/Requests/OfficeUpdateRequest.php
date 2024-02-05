@@ -20,7 +20,7 @@ class OfficeUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'max:255', 'alpha'],
+            'name' => ['required', 'max:255', 'alpha_spaces'],
             'phone' => ['numeric','starts_with:09'],
             'location' => ['required', 'max:255', 'string'],
         ];

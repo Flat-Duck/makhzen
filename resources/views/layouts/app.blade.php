@@ -54,13 +54,21 @@
 
     <body dir="rtl" class="theme-light">
 
-            <div id="app" class="page">
+        <div dir="" id="app" class="page">
+            <div class="sticky-top">
                 @include('layouts.nav')
-
-                <div class="page-wrapper">
-                    @yield('content')
-                </div>
+                
             </div>
+            <div class="page-wrapper">
+                <div class="page-body">
+                    <div class="container-xl">
+                        @yield('content')
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
 
             @stack('modals')
 
