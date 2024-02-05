@@ -29,4 +29,8 @@ class Order extends Model
     {
         return $this->belongsToMany(Item::class)->withPivot(['quantity','issued_quantity'])->as('required');
     }
+    public static function NotIssuedCount()
+    {
+        return Order::whereNot('status', 'مصروفة')->count();
+    }
 }
