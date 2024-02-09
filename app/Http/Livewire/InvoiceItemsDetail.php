@@ -25,6 +25,7 @@ class InvoiceItemsDetail extends Component
     protected $rules = [
         'item_id' => ['required', 'exists:items,id'],
         'quantity' => ['required', 'numeric'],
+        'item_code' => ['required', 'exists:items,code'],
     ];
 
     public function mount(Invoice $invoice): void
@@ -51,7 +52,13 @@ class InvoiceItemsDetail extends Component
     
     public function code_change()
     {
-        $this->item_id = Item::where('code', $this->item_code)->first()->id;
+        $this->validateOnly('item_code', ['item_code' =>'exists:items,code'], ['item_code' => 'الرجاء اضافة الصنف اولا']);
+        
+        $item = Item::where('code', $this->item_code)->first();
+
+        if ($item) {
+            $this->item_id = $item->id;
+        }
     }
 
     public function newItem(): void

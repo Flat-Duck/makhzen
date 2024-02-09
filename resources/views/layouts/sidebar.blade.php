@@ -18,7 +18,7 @@
                                 <li class="nav-item ">
                                     <a class="nav-link" href="{{ route('items.index') }}">
                                         <span class="nav-link-icon d-md-none d-lg-inline-block">
-                                            <i class="ti ti-users" ></i>
+                                            <i class="ti ti-packages"></i>
                                         </span>
                                         <span class="nav-link-title">
                                             الاصناف
@@ -30,7 +30,7 @@
                                 <li class="nav-item ">
                                     <a class="nav-link" href="{{ route('offices.index') }}">
                                         <span class="nav-link-icon d-md-none d-lg-inline-block">
-                                            <i class="ti ti-users" ></i>
+                                            <i class="ti ti-desk"></i>
                                         </span>
                                         <span class="nav-link-title">
                                             المكاتب
@@ -54,7 +54,7 @@
                             <li class="nav-item ">
                                 <a class="nav-link"  href="{{ route('invoices.index',['search'=>'وارد']) }}" >
                                     <span class="nav-link-icon d-md-none d-lg-inline-block">
-                                        <i class="ti ti-users" ></i>
+                                        <i class="ti ti-mail-down"></i>
                                     </span>
                                     <span class="nav-link-title">
                                         وارد
@@ -64,7 +64,7 @@
                             <li class="nav-item ">
                                 <a class="nav-link" href="{{ route('invoices.index',['search'=>'تالف']) }}" >
                                     <span class="nav-link-icon d-md-none d-lg-inline-block">
-                                        <i class="ti ti-users" ></i>
+                                        <i class="ti ti-recycle"></i>
                                     </span>
                                     <span class="nav-link-title">
                                         تالف
@@ -100,7 +100,7 @@
                                 <li class="nav-item ">
                                     <a class="nav-link" href="{{ route('issues.index') }}">
                                         <span class="nav-link-icon d-md-none d-lg-inline-block">
-                                            <i class="ti ti-users" ></i>
+                                            <i class="ti ti-license"></i>
                                         </span>
                                         <span class="nav-link-title">
                                             أذونات صرف
@@ -112,7 +112,7 @@
                                 <li class="nav-item ">
                                     <a class="nav-link" href="{{ route('orders.index') }}">
                                         <span class="nav-link-icon d-md-none d-lg-inline-block">
-                                            <i class="ti ti-users" ></i>
+                                            <i class="ti ti-folders"></i>
                                         </span>
                                         <span class="nav-link-title">
                                             متطلبات المكاتب
