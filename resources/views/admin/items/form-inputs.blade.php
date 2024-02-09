@@ -1,14 +1,7 @@
 @php $editing = isset($item) @endphp
 
-<x-inputs.group class="col-sm-12">
-    <x-inputs.number
-        name="code"
-        label="{{trans('crud.items.inputs.code')}}"
-        :value="old('code', ($editing ? $item->code : ''))"
-        placeholder="{{trans('crud.items.inputs.code')}}"
-        required
-    ></x-inputs.number>
-</x-inputs.group>
+
+<livewire:barcode :editing="$editing" :item="$editing ? $item : null" />
 
 <x-inputs.group class="col-sm-12">
     <x-inputs.text
