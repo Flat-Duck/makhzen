@@ -28,24 +28,23 @@
                                 <span class="badge bg-red"></span>
                             </a>
                         </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
+
+                        <a href="#" class="nav-item dropdown d-none d-md-flex me-3" data-bs-toggle="dropdown" aria-label="Open user menu">
                             
                             <div class="d-none d-xl-block ps-2">
                                 {{ auth()->user()->name ?? null }}
                             </div>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                            <a href="{{ route('home') }}" class="dropdown-item">{{ __('الملف الشخصي') }}</a>
-                            <div class="dropdown-divider"></div>
-                            <form method="POST" action="{{ route('logout') }}">
-                                @csrf
-                                <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault(); this.closest('form').submit();">
-                                    {{ __('تسجيل الخروج') }}
-                                </a>
-                            </form>
-                        </div>
+                        
+                        
+                        
+                        <form method="POST" class="nav-item dropdown d-none d-md-flex me-3" action="{{ route('logout') }}">
+                            @csrf
+                            <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault(); this.closest('form').submit();">
+                                {{ __('تسجيل الخروج') }}
+                            </a>
+                        </form>
+                    
                     </div>
                 @endauth
             </div>
