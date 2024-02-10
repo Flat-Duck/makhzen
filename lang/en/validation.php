@@ -138,7 +138,7 @@ return [
     'starts_with' => 'الحقل :attribute يجب ان يبدأ بأحد القيم التالية: :values.',
     'string' => 'يجب أن يكون الحقل :attribute نصآ.',
     'timezone' => 'يجب أن يكون :attribute نطاقًا زمنيًا صحيحًا',
-    'unique' => 'قيمة الحقل :attribute مُستخدمة من قبل',
+    'unique' => 'قيمة حقل :attribute تم تخزينه مسبقا ',
     'uploaded' => 'فشل في تحميل الـ :attribute',
     'uppercase' => 'The :attribute must be uppercase.',
     'url' => 'صيغة الرابط :attribute غير صحيحة',
