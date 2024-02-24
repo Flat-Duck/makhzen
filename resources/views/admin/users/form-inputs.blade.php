@@ -60,7 +60,7 @@
         required
     ></x-inputs.number>
 </x-inputs.group>
-
+{{-- 
 <div class="form-group col-sm-12 mt-4">
     <h4>تعيين الصلاحيات</h4>
 
@@ -76,4 +76,4 @@
         ></x-inputs.checkbox>
     </div>
     @endforeach
-</div>
+</div> --}}

@@ -1,6 +1,7 @@
 @props([
     'title',
     'subtitle',
+    'color'
 ])
 
 <div class="col-md-6 col-xl-3">
@@ -8,8 +9,8 @@
         <div class="card-body">
             <div class="row align-items-center">
                 <div class="col-auto">
-                    <span class="bg-primary text-white avatar">
-                        <i class="ti ti-eye"></i>
+                    <span class="{{ $color }} text-white avatar">
+                        <i class="ti ti-chart-bar"></i>
                     </span>
                 </div>
                 <div class="col">

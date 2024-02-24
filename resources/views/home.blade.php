@@ -1,17 +1,27 @@
 @extends('layouts.app', ['page' => 'dashboard'])
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <x-state title="عدد الطلبيات بحاجة الي صرف" subtitle="{{ \App\Models\Order::NotIssuedCount() }}" />
-        <x-state title="عدد أذونات صرف" subtitle="{{ \App\Models\Issue::count() }}" />
-        <x-state title="عدد الاصناف الموجودة" subtitle="{{ \App\Models\Item::count() }}" />
+    <div class="row justify-content-center d-print-none">
+        <x-state color="bg-yellow" title="عدد الطلبيات بحاجة الي صرف" subtitle="{{ \App\Models\Order::NotIssuedCount() }}" />
+        <x-state color="bg-green" title="عدد أذونات صرف" subtitle="{{ \App\Models\Issue::count() }}" />
+        <x-state color="bg-blue" title="عدد الاصناف الموجودة" subtitle="{{ \App\Models\Item::count() }}" />
     </div>
     <div class="row justify-content-center mt-4">
-        <div class="col-6">
+        <div class="col-md-6">
             <div class="card card-sm">
-              <div class="card-status-top bg-red"></div>
-              <div class="card-body">
-                <h3 class="card-title">الاصناف ذات صلاحية شارفت على الانتهاء [{{ \App\Models\Item::expiring()->count()}}]</h3>
+                <div class="card-status-top bg-red"></div>
+                <div class="card-body">
+                    <div class="d-flex">
+                        <div class="row g-2">
+                            <div class="col">
+                                <h3 class="card-title">الاصناف ذات صلاحية شارفت على الانتهاء [{{ \App\Models\Item::expiring()->count()}}]</h3>
+                            </div>                            
+                        </div>
+                        <div class="col-auto ms-auto d-print-none">
+                            <button class="btn btn-info col-auto" onclick="print()">طباعة</button>
+                        </div>
+                    </div>
+                
                 
                 <div class="divide-y-2 mt-4">
                     <div class="table-responsive">

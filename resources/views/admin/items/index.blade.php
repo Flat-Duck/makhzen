@@ -149,6 +149,10 @@
                                         </button>
                                     </form>
                                     @endcan
+                                    <a href="{{ route('print', $item) }}" target="blank"
+                                        class=" btn btn-icon btn-outline-success ms-1 " >
+                                        <i class="ti ti-printer"></i>
+                                    </a>
                                 </div>
                             </td>
                         </tr>

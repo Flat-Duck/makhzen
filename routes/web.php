@@ -36,6 +36,7 @@ Route::prefix('/')
         Route::resource('roles', RoleController::class);
         Route::resource('permissions', PermissionController::class);
 
+        Route::get('items/{item}/print', [ItemController::class,'print'])->name('print');
         Route::resource('issues', IssueController::class);
         Route::post('issues/items', [IssueController::class,'issue_items'])->name('issues.items');
         Route::resource('items', ItemController::class);

@@ -84,6 +84,7 @@
                     <thead>
                         <tr>
                             <th>#</th>
+                            <th>@lang('crud.issues.inputs.number')</th>
                             <th>@lang('crud.issues.inputs.date')</th>
                             <th>@lang('crud.common.actions')</th>
                         </tr>
@@ -92,6 +93,7 @@
                         @forelse($issues as $k=> $issue)
                         <tr>
                             <td>{{ $k+1 }}</td>
+                            <td>{{ $issue->number ?? '-' }}</td>
                             <td>{{ $issue->date ?? '-' }}</td>
                             <td>
                                 <div

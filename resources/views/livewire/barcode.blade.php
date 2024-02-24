@@ -1,5 +1,5 @@
 <div class="row">
-    <x-inputs.group class="col-sm-8">
+    <x-inputs.group class="col-sm-5">
         <x-inputs.number
             name="code"
             wire:model="code"
@@ -9,6 +9,12 @@
             placeholder="{{trans('crud.items.inputs.code')}}"
             required>
         </x-inputs.number>
+    </x-inputs.group>
+    <x-inputs.group class="col-sm-3 mt-5">
+        <label class="form-selectgroup-item">
+            <input type="radio" wire:confirm="ok?" wire:click="random_digits(12)"  class="form-selectgroup-input">
+            <span class="form-selectgroup-label">باركود</span>
+        </label>
     </x-inputs.group>
     <x-inputs.group class="col-sm-4 mt-5">
         @if($code)

@@ -4,7 +4,7 @@
     <x-inputs.date
         name="date"
         label="Date"
-        value="{{ old('date', ($editing ? optional($issue->date)->format('Y-m-d') : '')) }}"
+        value="{{ old('date', ($editing ? optional($issue->date)->format('Y-m-d') : now()->format('Y-m-d'))) }}"
         max="255"
         required
     ></x-inputs.date>

@@ -102,7 +102,7 @@ class IssueController extends Controller
         $order = Order::find($request->order_id);
         $item = Item::find($request->item_id);
         if ($item->quantity < $request->issued_quantity) {
-            return redirect()->back()->withsErrors(__('الكمية الموجودة في المخزن غير كافية'));    
+            return redirect()->back()->withsErrors(__('الكمية الموجودة لا تسمح'));    
         }
 
         $required_item = $order->items()->where('id', $item->id)->first()->required;

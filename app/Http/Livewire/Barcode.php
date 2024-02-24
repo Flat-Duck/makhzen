@@ -35,4 +35,14 @@ class Barcode extends Component
     {
         $this->validate();//('code', ['code' =>'unique:items,code','numeric', 'max:12']);
     }
+
+    function random_digits($length) {
+        $result = '';
+    
+        for ($i = 0; $i < $length; $i++) {
+            $result .= random_int(0, 9);
+        }
+    
+        $this->code = $result;
+    }
 }

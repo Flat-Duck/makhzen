@@ -105,4 +105,15 @@ class ItemController extends Controller
             ->route('items.index')
             ->withSuccess(__('crud.common.removed'));
     }
+
+        /**
+     * Remove the specified resource from storage.
+     */
+    public function print(Request $request, Item $item)
+    {
+        
+        $code = $item->code;
+
+        return view('admin.items.barcode', compact('code'));
+    }
 }
