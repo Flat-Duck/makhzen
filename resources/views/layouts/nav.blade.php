@@ -1,4 +1,4 @@
-<div class="sticky-top">
+<div class="sticky-top d-print-none">
     <header class="navbar navbar-expand-md navbar-light sticky-top d-print-none">
         <div class="container-xl">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
