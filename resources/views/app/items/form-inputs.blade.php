@@ -38,7 +38,7 @@
         name="quantity"
         label="Quantity"
         :value="old('quantity', ($editing ? $item->quantity : ''))"
-        max="255"
+        
         placeholder="Quantity"
         required
     ></x-inputs.number>
@@ -60,7 +60,7 @@
         name="ex_date"
         label="Ex Date"
         value="{{ old('ex_date', ($editing ? optional($item->ex_date)->format('Y-m-d') : now()->format('Y-m-d'))) }}"
-        max="255"
+        
         required
     ></x-inputs.date>
 </x-inputs.group>

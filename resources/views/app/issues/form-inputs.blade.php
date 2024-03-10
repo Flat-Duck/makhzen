@@ -5,7 +5,7 @@
         name="date"
         label="Date"
         value="{{ old('date', ($editing ? optional($issue->date)->format('Y-m-d') : now()->format('Y-m-d'))) }}"
-        max="255"
+        
         required
     ></x-inputs.date>
 </x-inputs.group>

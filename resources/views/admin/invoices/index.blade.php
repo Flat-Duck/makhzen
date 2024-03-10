@@ -64,8 +64,8 @@
                             data-bs-original-title="@lang('crud.common.create')"
                             data-bs-placement="top"
                             data-bs-toggle="tooltip"
-                            class="pull-right btn btn-primary"
-                            href="{{ route('invoices.create') }}"
+                            class="pull-right btn btn-primary"                            
+                            href="{{ route('invoices.create',['type'=> $type]) }}"
                         >
                             <i class="ti ti-plus"></i>
                             @lang('crud.common.create')

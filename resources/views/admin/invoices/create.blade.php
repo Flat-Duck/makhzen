@@ -4,7 +4,7 @@
 @section('content')
 <div class="container-xl">
     <div class="page-header d-print-none">
-        <h2 class="page-title">@lang('crud.invoices.create_title')</h2>
+        <h2 class="page-title">@lang('crud.invoices.create_title')  {{ $invoice->type?? $type }}</h2>
     </div>
 </div>
 <div class="page-body">
@@ -20,7 +20,7 @@
                     @csrf
                     <div class="card-header">
                         <h4 class="card-title">
-                            @lang('crud.invoices.create_title')
+                            @lang('crud.invoices.create_title')  {{ $invoice->type?? $type }}
                         </h4>
                     </div>
                     <div class="card-body">

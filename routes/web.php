@@ -26,6 +26,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('print', function () {
+    return view('print');
+})->name('printer');
+
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
@@ -43,5 +47,6 @@ Route::prefix('/')
         Route::resource('offices', OfficeController::class);
         Route::resource('users', UserController::class);
         Route::resource('invoices', InvoiceController::class);
+        Route::resource('inboxes', InboxController::class);
         Route::resource('orders', OrderController::class);
     });

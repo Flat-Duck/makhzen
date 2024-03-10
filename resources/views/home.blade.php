@@ -18,7 +18,7 @@
                             </div>                            
                         </div>
                         <div class="col-auto ms-auto d-print-none">
-                            <button class="btn btn-info col-auto" onclick="print()">طباعة</button>
+                            <a class="btn btn-info col-auto" href="{{route('printer')}}">طباعة</a>
                         </div>
                     </div>
                 
@@ -41,7 +41,7 @@
                                     <td>{{ $k+1 }}</td>
                                     <td>{{ $item->name ?? '-' }}</td>
                                     <td>{{ $item->quantity ?? '-' }}</td>
-                                    <td>{{ $item->ex_date ?? '-' }}</td>
+                                    <td>{{ $item->ex_date->format('Y/m/d') ?? '-' }}</td>
                                     <td>
                                         <div role="group" aria-label="Row Actions" class="d-flex" >
                                             @can('view', $item)

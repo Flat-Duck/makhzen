@@ -22,6 +22,7 @@ class InvoiceStoreRequest extends FormRequest
         return [
             'number' => ['required', 'numeric'],
             'type' => ['required', 'in:صادر,وارد,تالف'],
+            'date' => ['required', 'string'],
         ];
     }
 }

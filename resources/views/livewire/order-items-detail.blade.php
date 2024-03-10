@@ -43,7 +43,7 @@
                             name="quantity"
                             label="Quantity"
                             wire:model="quantity"
-                            max="255"
+                            
                             placeholder="Quantity"
                         ></x-inputs.number>
                     </x-inputs.group>

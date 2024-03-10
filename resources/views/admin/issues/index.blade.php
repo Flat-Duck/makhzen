@@ -85,6 +85,8 @@
                         <tr>
                             <th>#</th>
                             <th>@lang('crud.issues.inputs.number')</th>
+                            <th> {{__('المكتب / القسم')}} </th>
+                            <th> {{__('حالة الطلب')}} </th>
                             <th>@lang('crud.issues.inputs.date')</th>
                             <th>@lang('crud.common.actions')</th>
                         </tr>
@@ -94,7 +96,9 @@
                         <tr>
                             <td>{{ $k+1 }}</td>
                             <td>{{ $issue->number ?? '-' }}</td>
-                            <td>{{ $issue->date ?? '-' }}</td>
+                            <td>{{ $issue->order->office->name ?? '-' }}</td>
+                            <td>{{ $issue->order->status ?? '-' }}</td>
+                            <td>{{ $issue->date->format('Y/m/d')?? '-' }}</td>
                             <td>
                                 <div
                                     role="group"

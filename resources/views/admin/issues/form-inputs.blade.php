@@ -6,7 +6,7 @@
         name="odate"
         label="{{trans('crud.issues.inputs.date')}}"
         value="{{ old('date', ($editing ? optional($issue->date)->format('Y-m-d') : now()->format('Y-m-d'))) }}"
-        max="255"
+        
         onchange="updateHiddenInput()"
         required
     ></x-inputs.date>
@@ -27,7 +27,7 @@
         name="date"
         label="{{trans('crud.issues.inputs.date')}}"
         value="{{ old('date', ($editing ? optional($issue->date)->format('Y-m-d') : now()->format('Y-m-d'))) }}"
-        max="255"
+        
         onchange="updateHiddenInput()"
         required
     ></x-inputs.date>

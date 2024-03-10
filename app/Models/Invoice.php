@@ -11,9 +11,13 @@ class Invoice extends Model
     use HasFactory;
     use Searchable;
 
-    protected $fillable = ['number', 'type'];
+    protected $fillable = ['number', 'type','date'];
 
     protected $searchableFields = ['*'];
+
+    protected $casts = [
+        'date' => 'date',
+    ];
 
     public function items()
     {

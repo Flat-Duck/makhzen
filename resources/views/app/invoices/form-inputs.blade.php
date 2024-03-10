@@ -5,7 +5,7 @@
         name="number"
         label="Number"
         :value="old('number', ($editing ? $invoice->number : ''))"
-        max="255"
+        
         placeholder="Number"
         required
     ></x-inputs.number>

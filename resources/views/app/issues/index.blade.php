@@ -92,7 +92,7 @@
                         @forelse($issues as $k=> $issue)
                         <tr>
                             <td>{{ $k+1 }}</td>
-                            <td>{{ $issue->date ?? '-' }}</td>
+                            <td>{{ $issue->date->format('Y/m/d')?? '-' }}</td>
                             <td>
                                 <div
                                     role="group"

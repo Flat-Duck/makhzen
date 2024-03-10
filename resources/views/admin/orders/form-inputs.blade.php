@@ -5,7 +5,7 @@
         name="number"
         label="{{trans('crud.orders.inputs.number')}}"
         :value="old('number', ($editing ? $order->number : ''))"
-        max="255"
+        
         placeholder="{{trans('crud.orders.inputs.number')}}"
         required
     ></x-inputs.text>
@@ -16,7 +16,7 @@
         name="created_at"
         label="{{trans('crud.orders.inputs.created_at')}}"
         :value="old('created_at', ($editing ? $order->created_at : now()->format('Y-m-d')))"
-        max="255"
+        
         placeholder="{{trans('crud.orders.inputs.created_at')}}"
         required
     ></x-inputs.text>

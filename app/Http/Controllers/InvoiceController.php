@@ -24,8 +24,10 @@ class InvoiceController extends Controller
             ->latest()
             ->paginate(5)
             ->withQueryString();
+        
+        $type = ($search == "وارد")? "وارد" : "تالف";
 
-        return view('admin.invoices.index', compact('invoices', 'search'));
+        return view('admin.invoices.index', compact('invoices', 'search', 'type'));
     }
 
     /**
@@ -34,8 +36,9 @@ class InvoiceController extends Controller
     public function create(Request $request): View
     {
         $this->authorize('create', Invoice::class);
+        $type = $request->type;
 
-        return view('admin.invoices.create');
+        return view('admin.invoices.create', compact('type'));
     }
 
     /**
@@ -70,8 +73,9 @@ class InvoiceController extends Controller
     public function edit(Request $request, Invoice $invoice): View
     {
         $this->authorize('update', $invoice);
+        $type = $invoice->type;
 
-        return view('admin.invoices.edit', compact('invoice'));
+        return view('admin.invoices.edit', compact('invoice', 'type'));
     }
 
     /**

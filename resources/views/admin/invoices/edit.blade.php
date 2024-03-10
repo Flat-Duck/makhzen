@@ -4,7 +4,7 @@
 @section('content')
 <div class="container-xl">
     <div class="page-header d-print-none">
-        <h2 class="page-title">@lang('crud.invoices.edit_title')</h2>
+        <h2 class="page-title">@lang('crud.invoices.edit_title')  {{ $invoice->type?? $type }}</h2>
     </div>
 </div>
 <div class="page-body">
@@ -22,7 +22,7 @@
                     @method('PUT')
                     <div class="card-header">
                         <h4 class="card-title">
-                            @lang('crud.invoices.edit_title')
+                            @lang('crud.invoices.edit_title')  {{ $invoice->type?? $type }}
                         </h4>
                     </div>
                     <div class="card-body">

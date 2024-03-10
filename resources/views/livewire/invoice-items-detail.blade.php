@@ -54,7 +54,7 @@
                             name="quantity"
                             label="{{trans('crud.items.inputs.quantity')}}"
                             wire:model="quantity"
-                            max="255"
+                            
                             placeholder="{{trans('crud.items.inputs.quantity')}}"
                         ></x-inputs.number>
                     </x-inputs.group>

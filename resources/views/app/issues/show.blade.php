@@ -28,7 +28,7 @@
                         <div class="mt-3">
                             <div class="mb-3">
                                 <h5>@lang('crud.issues.inputs.date')</h5>
-                                <span>{{ $issue->date ?? '-' }}</span>
+                                <span>{{ $issue->date->format('Y/m/d')?? '-' }}</span>
                             </div>
                         </div>
 

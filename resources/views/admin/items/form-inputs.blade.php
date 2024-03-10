@@ -62,7 +62,7 @@
         name="ex_date"
         label="{{trans('crud.items.inputs.ex_date')}}"
         value="{{ old('ex_date', ($editing ? optional($item->ex_date)->format('Y-m-d') : now()->format('Y-m-d'))) }}"
-        max="255"
+        
         required
     ></x-inputs.date>
 </x-inputs.group>
