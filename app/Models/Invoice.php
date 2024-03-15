@@ -17,6 +17,7 @@ class Invoice extends Model
 
     protected $casts = [
         'date' => 'date',
+        'created_at' => 'date',
     ];
 
     public function items()

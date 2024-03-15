@@ -10,6 +10,7 @@ use App\Http\Controllers\OfficeController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\ReportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +48,10 @@ Route::prefix('/')
         Route::resource('offices', OfficeController::class);
         Route::resource('users', UserController::class);
         Route::resource('invoices', InvoiceController::class);
-        Route::resource('inboxes', InboxController::class);
         Route::resource('orders', OrderController::class);
+        Route::get('reports', [ReportController::class, 'index'])->name('reports.index');
+        Route::get('reports/inventory', [ReportController::class, 'inventory'])->name('reports.inventory');
+        Route::get('reports/invoices', [ReportController::class, 'invoices'])->name('reports.invoices');
+        Route::get('reports/issues', [ReportController::class, 'issues'])->name('reports.issues');
+        Route::get('reports/orders', [ReportController::class, 'orders'])->name('reports.orders');
     });
