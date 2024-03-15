@@ -25,7 +25,7 @@ class ReportController extends Controller
      */
     public function inventory(Request $request): View
     {
-        $type = "اليومي";
+        $type = $request->type;
         
         $items = Item::latest()->paginate(150)->withQueryString();
 
