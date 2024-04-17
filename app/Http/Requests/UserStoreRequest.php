@@ -26,7 +26,7 @@ class UserStoreRequest extends FormRequest
             'gender' => ['required'],
             'address' => ['required', 'string'],
             'password' => ['required'],
-            'phone' => ['numeric','starts_with:09'],
+            'phone' => ['numeric','starts_with:09','digits:10'],
             'roles' => 'array',
         ];
     }

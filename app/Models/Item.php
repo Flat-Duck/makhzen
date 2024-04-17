@@ -36,4 +36,8 @@ class Item extends Model
     {
         return Item::whereDate('ex_date', '<=', Carbon::now()->addMonth())->get();
     }
+    public static function low_stock()
+    {
+        return Item::where('quantity', '<', '5')->get();
+    }
 }

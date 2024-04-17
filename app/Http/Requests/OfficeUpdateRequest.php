@@ -21,7 +21,7 @@ class OfficeUpdateRequest extends FormRequest
     {
         return [
             'name' => ['required', 'max:255', 'alpha_spaces'],
-            'phone' => ['numeric','starts_with:09'],
+            'phone' => ['numeric','starts_with:09','digits:10'],
             'location' => ['required', 'max:255', 'string'],
         ];
     }
